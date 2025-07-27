@@ -4,7 +4,7 @@ import configurable.online.approval.system.chain.Approver; // 雖然我們說dom
 import configurable.online.approval.system.domain.enums.ApprovalStatus;
 import configurable.online.approval.system.domain.enums.ApplicationType;
 import java.util.Date;
-
+import java.util.UUID;
 /**
  * 申請單抽象基礎類別
  * 定義了所有申請單共通的屬性與狀態。
@@ -23,7 +23,7 @@ public abstract class Application {
 
     // 保護的建構函式，只能被子類別呼叫
     protected Application(ApplicationType type, User applicant) {
-        this.applicationId = java.util.UUID.randomUUID().toString(); // 自動生成ID
+        this.applicationId = UUID.randomUUID().toString(); // 自動生成ID
         this.type = type;
         this.applicant = applicant;
         this.status = ApprovalStatus.DRAFT; // 初始狀態為草稿
@@ -48,5 +48,36 @@ public abstract class Application {
         return chainHead;
     }
 
-    // ... 其他 Getters/Setters
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    public ApplicationType getType() {
+        return type;
+    }
+
+    public void setType(ApplicationType type) {
+        this.type = type;
+    }
+
+    public User getApplicant() {
+        return applicant;
+    }
+
+    public void setApplicant(User applicant) {
+        this.applicant = applicant;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
 }

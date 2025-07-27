@@ -16,5 +16,17 @@ public class LeaveApplication extends Application {
         this.reason = reason;
     }
 
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
     // Getters and Setters ...
 }

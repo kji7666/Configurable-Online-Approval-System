@@ -23,6 +23,14 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+
+    // JUnit 5 Jupiter, a modern testing framework for Java
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
+
+    // (強烈推薦) AssertJ for fluent assertions, 讓你的斷言更具可讀性
+    testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
